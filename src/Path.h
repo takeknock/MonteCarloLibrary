@@ -8,13 +8,13 @@
 namespace mctr {
     class Path {
     public:
-        Path(TimeGrid& timeGrid);
+        Path(boost::shared_ptr<TimeGrid> timeGrid);
         ~Path();
         double operator()(const std::size_t i);
         void operator =(Path& path);
     
     private:
-        TimeGrid& _data;
+        boost::shared_ptr<TimeGrid> _grids;
     
     };
 
